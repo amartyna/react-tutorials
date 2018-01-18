@@ -5,7 +5,13 @@ import './Answer.scss';
 const Answer = (props) => {
     return (
         <div className="col-5">
-            <h3>[answer]</h3>
+            {props.selectedNumbers.map((number, i) => 
+                <span 
+                key={i}
+                onClick={() => props.unselectNumber(number)}
+                >
+                {number}</span>
+            )}
         </div>
     );
 }
